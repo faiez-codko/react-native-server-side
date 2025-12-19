@@ -58,7 +58,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 />
             </div>
             <div className="flex flex-col">
-                <span className="font-bold text-sm leading-tight text-primary">Quantum</span>
+                <span className="font-bold text-sm leading-tight text-primary">RNSS</span>
                 <span className="text-xs text-muted-foreground">Build something great!</span>
             </div>
         </div>
@@ -84,7 +84,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
       {/* Footer */}
       <div className="mt-auto p-6 border-t">
         <div className="text-[10px] text-muted-foreground">
-          © {new Date().getFullYear()} Quantum
+          © {new Date().getFullYear()} RNSS
         </div>
         <div className="flex gap-1 mt-1">
             <div className="h-1 w-1 rounded-full bg-muted-foreground/30"></div>

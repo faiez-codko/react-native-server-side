@@ -59,7 +59,7 @@ export default function AboutPage() {
           className="max-w-3xl mx-auto space-y-6"
         >
           <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">
-            About Quantum
+            About React Native Server UI
           </h1>
           <p className="text-lg md:text-xl text-slate-400">
             Empowering the next generation of blockchain developers and crypto traders through world-class education.
@@ -79,7 +79,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl font-bold text-emerald-400">Our Mission</h2>
             <p className="text-slate-300 leading-relaxed">
-              At Quantum, we believe that financial freedom and technological innovation should be accessible to everyone. 
+              At React Native Server UI, we believe that financial freedom and technological innovation should be accessible to everyone. 
               The blockchain revolution is just getting started, and we are here to provide the map and compass for your journey.
             </p>
             <p className="text-slate-300 leading-relaxed">

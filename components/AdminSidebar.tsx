@@ -34,7 +34,7 @@ export const AdminSidebar = ({ className }: AdminSidebarProps) => {
                 />
             </div>
             <div className="flex flex-col">
-                <span className="font-bold text-sm leading-tight text-primary">Quantum</span>
+                <span className="font-bold text-sm leading-tight text-primary">RNSS</span>
                 <span className="text-xs text-muted-foreground">Admin Portal</span>
             </div>
         </div>

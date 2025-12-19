@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quantum",
+  title: "RNSS",
   description: "Learn and build with us",
 };
 
