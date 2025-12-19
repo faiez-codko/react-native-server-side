@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { GravityFooter } from "@/components/marketing/GravityFooter";
 
 export const Footer = () => {
-  const brandName = "QUANTUM";
+  const brandName = "RNSS";
 
   return (
     <footer className="bg-black text-white overflow-hidden relative">

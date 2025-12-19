@@ -74,13 +74,7 @@ export const GravityFooter = () => {
 
     Composite.add(engine.world, mouseConstraint);
 
-    // Create currency symbols as bodies
-    // Since matter.js doesn't support text bodies natively easily without SVG paths,
-    // we'll use circles with textures (images) or just custom rendering.
-    // For simplicity and performance, we'll use circles and render text on top using the `afterRender` event
-    // or creating textures. Creating textures via canvas is cleaner.
-
-    const currencies = ['$', '£', '₿', '€', '¥'];
+    const currencies = ['<V>', '<T>', '<B>', '<I>', '<T>'];
     const colors = ['#10b981', '#34d399', '#6ee7b7', '#059669', '#ffffff']; // Emerald shades + white
 
     const createCurrencyTexture = (text: string, color: string, radius: number) => {
