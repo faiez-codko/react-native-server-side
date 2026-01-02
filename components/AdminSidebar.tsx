@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 const sidebarItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: "/admin" },
-  { icon: FileText, label: "Pages", href: "/admin/pages" },
+  { icon: FileText, label: "Apps", href: "/admin/apps" },
   { icon: LogOut, label: "Exit Admin Mode", href: "/" },
 ];
 

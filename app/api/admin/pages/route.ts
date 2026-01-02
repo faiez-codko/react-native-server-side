@@ -10,25 +10,35 @@ export async function POST(req: Request) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const { title } = await req.json();
+    const { title, appId } = await req.json();
 
-    if (!title) {
-        return new NextResponse("Title is required", { status: 400 });
+    if (!title || !appId) {
+        return new NextResponse("Title and App ID are required", { status: 400 });
     }
     
     // Generate slug
     let slug = title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
     
-    // Check for duplicate slug
+    // Check for duplicate slug within the same app
     let slugExists = await db.page.findUnique({
-        where: { slug }
+        where: { 
+            appId_slug: {
+                appId: appId,
+                slug: slug
+            }
+        }
     });
     
     let count = 1;
     while (slugExists) {
         const newSlug = `${slug}-${count}`;
         slugExists = await db.page.findUnique({
-            where: { slug: newSlug }
+            where: { 
+                appId_slug: {
+                    appId: appId,
+                    slug: newSlug
+                }
+            }
         });
         if (!slugExists) {
             slug = newSlug;
@@ -40,6 +50,7 @@ export async function POST(req: Request) {
       data: {
         title,
         slug,
+        appId,
       }
     });
 

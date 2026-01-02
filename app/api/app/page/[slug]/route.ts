@@ -7,11 +7,29 @@ export async function GET(
 ) {
   try {
     const { slug } = await params;
+    const { searchParams } = new URL(req.url);
+    const appSlug = searchParams.get("appSlug");
+
+    if (!appSlug) {
+      return new NextResponse("App Slug is required", { status: 400 });
+    }
+
+    const app = await db.app.findUnique({
+      where: {
+        slug: appSlug,
+      },
+    });
+
+    if (!app) {
+      return new NextResponse("App not found", { status: 404 });
+    }
 
     const page = await db.page.findUnique({
-
       where: {
-        slug: slug,
+        appId_slug: {
+          appId: app.id,
+          slug: slug,
+        },
         isPublished: true,
       },
 
@@ -26,7 +44,7 @@ export async function GET(
     });
 
     if (!page) {
-      return new NextResponse("Not Found", { status: 404 });
+      return new NextResponse("Page Not Found", { status: 404 });
     }
 
     return NextResponse.json(page);
